@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<title> This is a game... </title>
+	<style type = "text/css">
+
+	html 
+	{
+		scroll-behavior: smooth;
+	}
+
+	#rule_btn_img 
+	{
+		margin-top: -200px;
+		margin-left: 20%;
+		height: 800px;
+	}
+	#main_title
+	{
+		font-family: roboto;
+		font-size: 60px;
+		color: white;
+		font-weight: bold;
+	    text-shadow: 1px 1px 2px black, 0 0 25px #7a2db5, 0 0 5px #7a2db5;
+	}
+	#rule_content p
+	{
+		text-align: left;
+		font-size: 24px;
+		text-shadow: 1px 1px 2px black, 0 0 25px #7a2db5, 0 0 5px #7a2db5;
+	}
+	#p1,#p2,#p3
+	{
+		width:1100px
+	}
+	
+	#startup
+	{
+		display: table;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 200px;
+	}
+
+	p
+	{
+		font-size: 36px;
+		text-align: center;
+		color: white;
+		text-shadow: 1px 1px 2px black, 0 0 25px #7a2db5, 0 0 5px #7a2db5;
+	}
+	
+	img:hover
+	{
+		transform: scale(0.9);
+	}
+	
+	#feedback
+	{
+		margin-top: 20px;
+		text-align: center;
+		width: 100%;
+	}
+	#explanation
+	{
+		margin-top: 50px;
+		text-align: center;
+		width: 100%;
+		font-size: 28px;
+	}
+	
+	/* question part !!!!!!!!!!!!!!!!!!!!!!!*/
+	/* question part !!!!!!!!!!!!!!!!!!!!!!!*/
+	/* question part !!!!!!!!!!!!!!!!!!!!!!!*/
+	
+	#Q1 .Q1B
+	{
+		height: 50px;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	#Q2 .Q2B
+	{
+		height: 50px;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	#Q3 .Q3B 
+	{
+		height: 75px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	#Q3 #Q3B2
+	{
+		height: 50px;
+		margin-left: 75px;
+	}
+	#Q4 .Q4B
+	{
+		height: 75px;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	#Q5 .Q5B
+	{
+		height: 50px;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	#Q6 .Q6B
+	{
+		height: 50px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	#Q7 .Q7B
+	{
+		height: 50px;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	#Q8 .Q8B
+	{
+		height: 50px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	#Q9 .Q9B
+	{
+		height: 50px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	#Q10 .Q10B
+	{
+		height: 75px;
+		width: 75px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	#Q11 .Q11B
+	{
+		height: 75px;
+		margin-left: 25%;
+		margin-top: 2%;
+	}
+	#Q12 .Q12B
+	{
+		height: 50px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	
+	.game_part 
+	{
+		margin-top: 50px;
+		display: table;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 50px;
+	}
+	.layer02
+	{
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+	
+	#finish_pic
+	{
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0px;
+		margin-left: 25%;
+		width: 50%;
+	}
+	#finish_pic:hover
+	{
+		transform: scale(1.0);
+	}
+	#red_mark
+	{
+		float: left;
+		font-size: 36px;
+		position: relative;
+		left: 31%;
+	}
+	#green_mark
+	{
+		float: left;
+		font-size: 36px;
+		position: relative;
+		left: 47%;
+	}
+	#yellow_mark
+	{
+		float: left;
+		font-size: 36px;
+		position: relative;
+		left: 63%;
+	}
+	#finish_section p
+	{
+		font-size: 40px;
+		font-weight: bold;
+	}
+	#mark_section
+	{
+	    margin-top: 20%;
+		overflow: auto;
+	}
+	#fine_result 
+	{
+		margin-top: 25px;
+		text-align: center;
+		width: 100%;
+	}
+	#btn_try
+	{
+		position: absolute;
+		top: 600px;
+		margin-left: 40%;
+		height: 75px;
+	}
+	
+	.footer_layer01
+	{
+		height: auto;
+		width: auto;
+		overflow: auto;
+	}
+	.footer_layer02
+	{
+		margin-top: 25px
+		height: auto;
+		width: auto;
+	}
+	#fine_comment
+	{
+		margin-top: 50px;
+	}
+	.footer_layer03
+	{
+		height: auto;
+		width: auto;
+	}
+	
+	/* mess part !!!!!!!!!!!!!!!!!!!!!!!*/
+	/* mess part !!!!!!!!!!!!!!!!!!!!!!!*/
+	/* mess part !!!!!!!!!!!!!!!!!!!!!!!*/
+	
+	#bt_getstart
+	{
+		height: 150px;
+	}
+	#bt_next
+	{
+		background-image: url("https://jamsnot.social/wp-content/uploads/2021/10/next.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		float: left;
+		height: 75px;
+		width: 250px;
+		margin-left: 13%;
+	}
+	#bt_next:hover
+	{
+		transform: scale(0.9);
+		
+	}
+	#bt_next:active
+	{
+		background-image: url("https://www.jamsnot.social/wp-content/uploads/2021/10/next_click.png");
+	}
+	#bt_learn_more
+	{
+		background-image: url("https://jamsnot.social/wp-content/uploads/2021/10/learn_more.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		float: left;
+		height: 75px;
+		width: 250px;
+		margin-left: 10%
+	}
+	#bt_learn_more:hover
+	{
+		transform: scale(0.9);
+	}
+	#bt_learn_more:active
+	{
+		background-image: url("https://www.jamsnot.social/wp-content/uploads/2021/10/learn_more_click.png");
+	}
+	.trafficlight
+	{
+		width: 20%;
+		float: left;
+		
+		margin-left: 8%;
+	}
+	.trafficlight:hover
+	{
+		transform: scale(1);
+	}
+	
+	</style>
+	
+	</head>
+	<body>
+	
+	<div>
+		<a id = "rule_btn" href="#main_title" onclick = show_rules()>
+			<img id = "rule_btn_img" src = "https://jamsnot.social/wp-content/uploads/2021/10/jam-blue-1024x1024-1.png">
+		</a>
+			
+		<!--<img id = "rule_btn" src = "https://jamsnot.social/wp-content/uploads/2021/09/jam-blue.png" onclick = show_rules()>-->
+	</div>
+	
+	<div>
+		<p id = "main_title">Let’s play a game!</p>
+	</div>
+	
+	<div id = "rule_content">
+		<p>Hello! In this game, you will be proposed with 5 different multiple choice questions. We will keep track of how much you know about traffic and issue a fine in the end using the following rules:</p>
+		<p id = "p1">&nbsp;&nbsp;&nbsp;- For every correct answer, a green light will be displayed and nothing will be added to your final traffic fine.</p>
+		<p id = "p2">&nbsp;&nbsp;&nbsp;- A yellow light will be displayed if your answer is close to the correct one which will add an extra $5 to your fine.</p>
+		<p id = "p3">&nbsp;&nbsp;&nbsp;- A red light will appear if the answer is completely wrong which will add $20 extra.
+Check out how much you will have to pay as a traffic fine in the end! Hopefully, it’s $0 =).</p>
+
+
+	</div>
+
+	
+	<div id = "startup">
+		<img id = "bt_getstart" src = "https://jamsnot.social/wp-content/uploads/2021/09/getstart_big.png" onclick = start_game()>
+	</div>
+	
+	<!--question01************************** okokok -->
+	
+	<div id = "Q1">
+	<p>What percentage of parking spaces in Melbourne CBD is reserved for people with disabilities?</p>
+		<div class = "game_part">
+			<div class = "layer01">
+				<img class = "Q1B" src = "https://jamsnot.social/wp-content/uploads/2021/10/1_p2.png" onclick = checkAnswer('G',"Q1")>
+				<img class = "Q1B" src = "https://jamsnot.social/wp-content/uploads/2021/10/1_p9.png" onclick = checkAnswer('R',"Q1")>
+			</div>
+			<div class = "layer02">
+				<img class = "Q1B" src = "https://jamsnot.social/wp-content/uploads/2021/10/1_p4.png" onclick = checkAnswer('Y',"Q1")>
+				<img class = "Q1B" src = "https://jamsnot.social/wp-content/uploads/2021/10/1_p1.png" onclick = checkAnswer('Y',"Q1")>
+			</div>
+		
+		</div>
+	</div>
+	
+	<!--question02**************************okokok-->
+	<div id = "Q2">
+		<p>What is the most congested time for Melbourne CBD’s traffic during weekdays?</p>
+		<div class = "game_part">
+			<div class = "layer01">
+				<img class = "Q2B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p2_2.png" onclick = checkAnswer('G',"Q2")>
+				<img class = "Q2B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p2_3.png" onclick = checkAnswer('R',"Q2")>
+				<img class = "Q2B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p2_1.png" onclick = checkAnswer('Y',"Q2")>
+			</div>	
+		</div>
+	</div>
+	
+	<!--question03**************************okokok-->
+	
+	<div id = "Q3">
+	<p>Do you consider Private Transport to be always faster than Public when going to the CBD?</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q3B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt3_yes.png" onclick = checkAnswer('R',"Q3")>
+			<img class = "Q3B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt3_no.png" onclick = checkAnswer('G',"Q3")>
+		</div>
+		<div class = "layer02">
+			<a href = "https://www.jamsnot.social/features/">
+				<img id = "Q3B2" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt3_notsure.png" >
+			</a>
+		</div>		
+	</div>
+	</div>
+	
+	<!--question04**************************-->
+	
+	<div id = "Q4">
+		<p>How much does a full fare myki card cost in Melbourne?</p>
+		<div class = "game_part">
+			<div class = "layer01">
+				<img class = "Q4B" src = "https://jamsnot.social/wp-content/uploads/2021/10/4_1.png" onclick = checkAnswer('G',"Q4")>
+				<img class = "Q4B" src = "https://jamsnot.social/wp-content/uploads/2021/10/4_2.png" onclick = checkAnswer('R',"Q4")>
+				<img class = "Q4B" src = "https://jamsnot.social/wp-content/uploads/2021/10/4_3.png" onclick = checkAnswer('Y',"Q4")>
+			</div>			
+		</div>
+	</div>
+	
+	<!--question05**************************-->
+	
+	<div id = "Q5">
+	<p>How much time does a melburnian spend on average travelling every day?</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q5B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt_min_65.png" onclick = checkAnswer('G',"Q5")>
+			<img class = "Q5B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt_min_90.png" onclick = checkAnswer('R',"Q5")>
+		</div>
+		<div class = "layer02">
+			<img class = "Q5B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt_min_55.png" onclick = checkAnswer('Y',"Q5")>
+			<img class = "Q5B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt_min_30.png" onclick = checkAnswer('R',"Q5")>
+			<img class = "Q5B" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt_min_45.png" onclick = checkAnswer('R',"Q5")>
+		</div>	
+		
+	</div>
+	</div>
+	
+	<!--question06**************************-->
+	<div id = "Q6">
+	<p>How many people out of 10 Australians spend more than 90 minutes a day commuting to work??</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q6B" src = "https://jamsnot.social/wp-content/uploads/2021/10/6_1.png" onclick = checkAnswer('R',"Q6")>
+			<img class = "Q6B" src = "https://jamsnot.social/wp-content/uploads/2021/10/6_2.png" onclick = checkAnswer('G',"Q6")>
+		</div>	
+		<div class = "layer02">
+			<img class = "Q6B" src = "https://jamsnot.social/wp-content/uploads/2021/10/6_3.png" onclick = checkAnswer('Y',"Q6")>
+			<img class = "Q6B" src = "https://jamsnot.social/wp-content/uploads/2021/10/6_4.png" onclick = checkAnswer('R',"Q6")>
+		</div>	
+	</div>
+	</div>
+	
+	<!--question07**************************-->
+	<div id = "Q7">
+	<p>How much money do Melburnians spend on commuting per week?</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q7B" src = "https://jamsnot.social/wp-content/uploads/2021/10/190.png" onclick = checkAnswer('G',"Q7")>
+			<img class = "Q7B" src = "https://jamsnot.social/wp-content/uploads/2021/10/90.png" onclick = checkAnswer('R',"Q7")>
+		</div>
+	</div>
+	</div>
+	
+	<!--question08**************************-->
+	<div id = "Q8">
+	<p>How much money on average do Metropolitan households pay on transport costs per year?</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q8B" src = "https://jamsnot.social/wp-content/uploads/2021/10/m_20000.png" onclick = checkAnswer('G',"Q8")>
+			<img class = "Q8B" src = "https://jamsnot.social/wp-content/uploads/2021/10/m_19000.png" onclick = checkAnswer('R',"Q8")>
+		</div>
+		<div class = "layer02">
+			<img class = "Q8B" src = "https://jamsnot.social/wp-content/uploads/2021/10/m_18000.png" onclick = checkAnswer('R',"Q8")>
+			<img class = "Q8B" src = "https://jamsnot.social/wp-content/uploads/2021/10/m_19500.png" onclick = checkAnswer('Y',"Q8")>
+		</div>
+	</div>
+	</div>
+	
+	<!--question9**************************-->
+	<div id = "Q9">
+	<p>How much percentage of the income on average do households spend on transport in Metropolitan Victoria?</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q9B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p15.png" onclick = checkAnswer('G',"Q9")>
+			<img class = "Q9B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p18.png" onclick = checkAnswer('Y',"Q9")>
+			<img class = "Q9B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p19.png" onclick = checkAnswer('R',"Q9")>
+		</div>
+	</div>
+	</div>
+	
+	<!--question10**************************-->
+	<div id = "Q10">
+	<p>Which type of transport emits the lowest amount of CO2 per km travelled per person?</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q10B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p_tram.png" onclick = checkAnswer('Y',"Q10")>
+			<img class = "Q10B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p_train.png" onclick = checkAnswer('G',"Q10")>
+		</div>
+		<div class = "layer02">
+			<img class = "Q10B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p_bus.png" onclick = checkAnswer('Y',"Q10")>
+			<img class = "Q10B" src = "https://jamsnot.social/wp-content/uploads/2021/10/p_car.png" onclick = checkAnswer('R',"Q10")>
+		</div>
+	</div>
+	</div>
+	
+	<!--question11**************************-->
+	<div id = "Q11">
+	<p>Which of the following Parking offences is the one historically causing more fines in Melbourne CBD:</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q11B" src = "https://jamsnot.social/wp-content/uploads/2021/10/14_1.png" onclick = checkAnswer('R',"Q11")>
+			<img class = "Q11B" src = "https://jamsnot.social/wp-content/uploads/2021/10/14_2.png" onclick = checkAnswer('Y',"Q11")>
+		</div>
+		<div class = "layer02">
+			<img class = "Q11B" src = "https://jamsnot.social/wp-content/uploads/2021/10/14_3.png" onclick = checkAnswer('G',"Q11")>
+			<img class = "Q11B" src = "https://jamsnot.social/wp-content/uploads/2021/10/14_4.png" onclick = checkAnswer('Y',"Q11")>
+		</div>
+	</div>
+	</div>
+	
+	<!--question12**************************-->
+	<div id = "Q12">
+	<p>Which is the most common maximum time of stay for on-street Parking spaces in the CBD:</p>
+	<div class = "game_part">
+		<div class = "layer01">
+			<img class = "Q12B" src = "https://jamsnot.social/wp-content/uploads/2021/10/8h.png" onclick = checkAnswer('R',"Q12")>
+			<img class = "Q12B" src = "https://jamsnot.social/wp-content/uploads/2021/10/6h.png" onclick = checkAnswer('R',"Q12")>
+		</div>
+		<div class = "layer02">
+			<img class = "Q12B" src = "https://jamsnot.social/wp-content/uploads/2021/10/1h.png" onclick = checkAnswer('G',"Q12")>
+			<img class = "Q12B"src = "https://jamsnot.social/wp-content/uploads/2021/10/12h.png" onclick = checkAnswer('Y',"Q12")>
+		</div>
+	</div>
+	</div>
+	
+	
+	<!--footer**************************-->
+	<div class = "footer_area">
+		<div class = "footer_layer01">
+			<a id = "bt_learn_more" onclick = show_explanation_content()></a>
+			<img class = "trafficlight" src = "https://jamsnot.social/wp-content/uploads/2021/09/traffic_light_img.png">
+			<a id = "bt_next" onclick = next_question()></a>
+		</div>
+		<div class = "footer_layer02">
+			<p id = "feedback"></p>
+		</div>
+		<div class = "footer_layer03">
+			<p id = "explanation"></p>
+		</div>
+	</div>
+	
+	<!--finish page*************************-->
+	<div id = "finish_section">
+
+		<div>
+			<img id = "finish_pic" src = "https://jamsnot.social/wp-content/uploads/2021/09/final_pic.png">
+		</div>
+		<div id = "mark_section">
+			<p id = "red_mark"></p>
+			<p id = "green_mark"></p>
+			<p id = "yellow_mark"></p>
+		</div>
+		<div>
+			<p id = "fine_result"></p>
+		</div>
+		<div>
+			<p id = "fine_comment"></p>
+		</div>
+		<div>
+			<img id = "btn_try" src = "https://jamsnot.social/wp-content/uploads/2021/10/bt_try.png" onclick = try_again()>
+		</div>
+	</div>
+
+	</body>
+	<script>
+	
+	// all option dataset!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// only change when there is a game added
+	
+		const question_list = new Array(10);
+		
+		var count = 0;
+		
+		var total_green = 0;
+		
+		var total_red = 0;
+		
+		var total_yellow = 0;
+		
+	
+		document.getElementById("bt_next").style.display = "none";
+		empty_light();
+		empty_explanation(); //button
+		empty_explanation_content();
+		empty_feedback();
+		empty_finish_page();
+		document.getElementById("fine_result").style.display = "none";
+		hide_all();
+		
+		const question_name = "";
+		
+		function checkAnswer(solution, num_index)
+		{
+			if (solution == 'R')
+			{
+				total_red++;
+				red_light();
+				document.getElementById("feedback").innerHTML = "Incorrect answer! Check “Learn More” for extra information.";
+				show_feedback();
+				show_explanation();
+				
+			}
+			else if (solution == 'Y')
+			{
+				total_yellow++;
+				yellow_light();
+				document.getElementById("feedback").innerHTML = "Close enough! Check “Learn More” for extra information.";
+				show_feedback();
+				show_explanation();
+			}
+			else
+			{
+				total_green++;
+				green_light();
+				document.getElementById("feedback").innerHTML = "Correct answer! Check “Learn More” for extra information.";
+				show_feedback();
+				show_explanation();
+			}
+			
+			document.getElementById("bt_next").style.display = "block";
+			disable_click(num_index);
+		}
+		function green_light()
+		{
+			var getClass = document.getElementsByClassName("trafficlight");
+			var i;
+			for(i=0;i<getClass.length;i++)
+			{
+				getClass[i].src = "https://jamsnot.social/wp-content/uploads/2021/09/traffic_light_img_gr.png";
+			}
+		}
+		function red_light()
+		{
+			var getClass = document.getElementsByClassName("trafficlight");
+			var i;
+			for(i=0;i<getClass.length;i++)
+			{
+				getClass[i].src = "https://jamsnot.social/wp-content/uploads/2021/09/traffic_light_img_re.png";
+			}
+		}
+		function yellow_light()
+		{
+			var getClass = document.getElementsByClassName("trafficlight");
+			var i;
+			for(i=0;i<getClass.length;i++)
+			{
+				getClass[i].src = "https://jamsnot.social/wp-content/uploads/2021/09/traffic_light_img_ye.png";
+			}
+		}
+		function origin_light()
+		{
+			var getClass = document.getElementsByClassName("trafficlight");
+			var i;
+			for(i=0;i<getClass.length;i++)
+			{
+				getClass[i].src = "https://jamsnot.social/wp-content/uploads/2021/09/traffic_light_img.png";
+			}
+		}
+		
+		function empty_light()
+		{
+			var getClass = document.getElementsByClassName("trafficlight");
+			var i;
+			for(i=0;i<getClass.length;i++)
+			{
+				getClass[i].style.display = "none";
+			}
+		}
+		function start_game()
+		{
+			var question_index = Math.floor((Math.random() * 12) + 1);
+			question_list.push(question_index);
+			var question_name = "Q" + question_index;
+			web_response(question_index);
+
+			document.getElementById("startup").style.display = "None";
+			document.getElementById(question_name).style.display = "block";
+			document.getElementsByClassName("trafficlight")[0].style.display = "block";
+			
+			
+			document.getElementById("main_title").style.display = "None";
+			document.getElementById("rule_btn").style.display = "None";
+			document.getElementById("rule_content").style.display = "None";
+			
+		}
+		function next_question()
+		{
+			
+			empty_feedback();
+			origin_light();
+					
+			document.getElementById("bt_next").style.display = "none";
+			count++;
+			empty_explanation();
+			empty_explanation_content();
+			hide_all();
+			
+			if(count < 5)
+			{	
+				do
+				{
+					var question_index = Math.floor((Math.random() * 12) + 1);
+				}
+				while(question_list.includes(question_index))
+				question_list.push(question_index);
+				var question_name = "Q" + question_index;
+			
+				web_response(question_index);
+				document.getElementById(question_name).style.display = "block";
+				document.getElementsByClassName("trafficlight")[0].style.display = "block";
+			}
+			else
+			{
+				finish_page();
+			}
+		}
+		
+		function hide_all()
+		{
+			document.getElementById("Q1").style.display = "none";
+			document.getElementById("Q2").style.display = "none";
+			document.getElementById("Q3").style.display = "none";
+			document.getElementById("Q4").style.display = "none";
+			document.getElementById("Q5").style.display = "none";
+			document.getElementById("Q6").style.display = "none";
+			document.getElementById("Q7").style.display = "none";
+			document.getElementById("Q8").style.display = "none";
+			document.getElementById("Q9").style.display = "none";
+			document.getElementById("Q10").style.display = "none";
+			document.getElementById("Q11").style.display = "none";
+			document.getElementById("Q12").style.display = "none";
+			document.getElementById("rule_content").style.display = "none";
+		}
+		function show_explanation()
+		{
+			document.getElementById("bt_learn_more").style.visibility = "visible"
+		}
+		function show_feedback()
+		{
+			document.getElementById("feedback").style.display = "block";
+		}
+		function show_explanation_content()
+		{
+			empty_feedback();
+			document.getElementById("explanation").style.display = "block";
+		}
+		
+		function empty_explanation()
+		{
+			document.getElementById("bt_learn_more").style.visibility = "hidden";
+		}
+		function empty_feedback()
+		{
+			document.getElementById("feedback").innerHTML = "";
+		}
+		function empty_explanation_content()
+		{
+			document.getElementById("explanation").style.display = "none";
+		}
+		
+		function finish_page()
+		{
+			document.getElementById("bt_next").style.display = "none";
+			document.getElementById("bt_learn_more").style.display = "none";
+			empty_light();
+			empty_explanation();
+			empty_explanation_content();
+			empty_feedback();
+		
+			var total_fine = total_red*20 + total_yellow*5;
+			document.getElementById("red_mark").innerHTML = total_red;
+			document.getElementById("green_mark").innerHTML = total_green;
+			document.getElementById("yellow_mark").innerHTML = total_yellow;
+			document.getElementById("finish_section").style.display = "block";
+			
+			document.getElementById("fine_result").innerHTML = "Your total fine is $" + total_fine ;
+			document.getElementById("fine_result").style.display = "block";
+			
+			show_fine_comment(total_fine);
+		}
+		
+		function empty_finish_page()
+		{
+			document.getElementById("finish_section").style.display = "none";
+		}
+		
+		//may be remove
+		function disable_click(a_id)
+		{	
+			var childNodes = document.getElementById(a_id).getElementsByTagName('*');
+		
+			for (var i = 0; i < childNodes.length; i++) 
+			{
+				childNodes[i].onclick = null;
+			}
+		}
+		
+		
+		function show_rules()
+		{
+			var cond = document.getElementById("rule_content").style.display;
+			
+			if(cond == "none")
+			{
+				document.getElementById("rule_content").style.display = "block";
+			}
+			else
+			{
+				document.getElementById("rule_content").style.display = "none";
+			}
+		}
+		
+		function try_again()
+		{
+			location.reload();
+		}
+		
+		function show_fine_comment(fine)
+		{
+			var content = "";
+			if(fine <= 10)
+			{
+				content = "Congratulations, you are a model citizen! Thanks for your commitment.";
+			}
+			else if(fine <= 50)
+			{
+				content = "Great work! Maybe next time it’s only green lights for you!";
+			}
+			else
+			{
+				content = "Thank you for playing! You can try again to see if you can achieve more green lights this time.";
+			}
+			document.getElementById("fine_comment").innerHTML = content;
+		}
+		
+
+		function web_response(index)
+		{
+			if(index == 1)
+			{
+				document.getElementById("explanation").innerHTML = "The correct answer is 2%. Parking areas with under 1000 total spaces must have 1 disabled car park per 50 spaces, and 1 additional space for every 100 spaces over 1000.";
+			}
+			else if (index == 2)
+			{
+				document.getElementById("explanation").innerHTML = "The \"evening peak hour\" on weekdays is 5.30pm-6:00pm; The least congested time during weekdays is 11 a.m.";
+			}
+			else if (index == 3)
+			{
+				document.getElementById("explanation").innerHTML = "It really depends on a lot of factors such as day of the week, hour of the day, etc. “Compare Journeys” has been designed for people to realise that Public Transport can be a better option a lot of the time.";
+			}
+			else if (index == 4)
+			{
+				document.getElementById("explanation").innerHTML = "A full fare myki card costs $6 and a concession, seniors or child myki costs $3.";
+			}
+			else if (index == 5)
+			{
+				document.getElementById("explanation").innerHTML = "The correct answer is 65 mins. Sydney has recorded in 2019 the longest average daily commutes (71 minutes), followed by Brisbane (67 minutes), Melbourne (65 minutes), Perth (59 minutes) and Adelaide (56 minutes).";
+			}
+			else if (index == 6)
+			{
+				document.getElementById("explanation").innerHTML = "The correct answer is 9. According to the data, spending a huge amount of time while commuting to work is common in Australia and so is traffic congestion during work hours. Using public transport for daily journey will not only save money and time but help in reducing traffic congestions.";
+			}
+			else if (index == 7)
+			{
+				document.getElementById("explanation").innerHTML = "The correct answer is $190. Melbourne is the second most expensive city in Australia when it comes to transport. The transport cost has been increasing every year.";
+			}
+			else if (index == 8)
+			{
+				document.getElementById("explanation").innerHTML = "The correct answer is $20,000. Melbourne is the second most expensive city in Australia for total transport costs after Sydney. These costs have been gradually increasing 5 % each year since 2018.";
+			}
+			else if (index == 9)
+			{
+				document.getElementById("explanation").innerHTML = "The correct answer is 15%.";
+			}
+			else if (index == 10)
+			{
+				document.getElementById("explanation").innerHTML = "The train emits the lowest amount of CO2 per person while the car emits the highest (more than 10 times higher than the train’s). This is strictly related to the carriage capacity of each type of transport: trains can carry up to 1300 passengers while cars only up to 5.";
+			}
+			else if (index == 11)
+			{
+				document.getElementById("explanation").innerHTML = "Parking for a period longer than indicated is the most common parking offence issued by the City of Melbourne, accounting for 39% of the total parking fines.";
+			}
+			else
+			{
+				document.getElementById("explanation").innerHTML = "The most common maximum time of stay is 1 hour, accounting for 37% of the total. As the length of stay increases, the number of suitable parking spaces reduces. 8 hours on-street parking spaces do not actually exist in Melbourne CBD.";
+			}
+		}
+	</script>
+</html>
